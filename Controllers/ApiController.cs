@@ -10,8 +10,10 @@ namespace Tanks.Controllers
         {
             this._profile = profile;
         }
-        string Login(string login, string pass)
+        [HttpPost]
+        public string Login(string login, string pass)
         {
+            if (login == null|| pass== null) return "Failure";
             if (_profile.ValidateProfile(login, pass)) 
             {
                 return "Success";

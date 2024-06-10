@@ -24,14 +24,12 @@
             </ul>
         </div>
         <div ng-app ng-init="checked = false">
-            <form class="form-signin" action="" method="post" name="form">
+            <form class="form-signin" asp-controller="Api" asp-action="Login" method="post" name="form">
                 <label for="username">Логин</label>
-                <input class="form-styling" type="text" name="username" placeholder="" />
+                <input class="form-styling" type="text" name="login">
                 <label for="password">Пароль</label>
-                <input class="form-styling" type="text" name="password" placeholder="" />
-                <div class="btn-animate">
-                    <a class="btn-signin">Войти</a>
-                </div>
+                <input class="form-styling" type="text" name="pass">
+                <button class="btn-signin" type="submit">Войти</button
             </form>
 
             <form class="form-signup" action="" method="post" name="form">
