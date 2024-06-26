@@ -10,15 +10,14 @@ namespace Tanks.Controllers
         {
             this._profile = profile;
         }
-        [HttpPost]
-        public string Login(string login, string pass)
+        public IActionResult Login(string login, string pass)
         {
-            if (login == null|| pass== null) return "Failure";
+            if (login == null || pass == null) return new JsonResult("Failure"); ;
             if (_profile.ValidateProfile(login, pass)) 
             {
-                return "Success";
+                return new RedirectToActionResult("Game", "Home", null); ;
             }
-            return "Failure";
+            return new JsonResult("Failure");
         }
     }
 }

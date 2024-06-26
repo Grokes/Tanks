@@ -3,7 +3,6 @@ using Tanks.Game;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IProfile, Profile>();
 builder.Services.AddControllersWithViews();
 
@@ -19,7 +18,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-//app.Mi
 app.UseRouting();
 
 app.UseAuthorization();
