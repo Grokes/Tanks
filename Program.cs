@@ -1,10 +1,19 @@
 using Tanks.Game;
+using Tanks.Game.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<IProfile, Profile>();
-builder.Services.AddControllersWithViews();
+builder
+    .Services
+    .AddControllersWithViews()
+    .AddRazorOptions(options =>
+    {
+        options.ViewLocationFormats.Add("/PartialViews/{0}.cshtml");
+    });
+builder.Services.AddSingleton<IGameManager, GameManager>();
+
 
 var app = builder.Build();
 

@@ -1,0 +1,13 @@
+﻿@model Tanks.Models.GameFieldModel
+
+<div>
+	GameField
+	<div class="GameField">
+		@for (int counter = 0; counter < Model.FieldHeight; ++counter)
+		{
+			await Html.RenderPartialAsync("GameFieldRow");
+		}
+
+		
+	</div>
+</div>

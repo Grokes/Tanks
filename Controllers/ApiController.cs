@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Tanks.Game;
+using Tanks.Game.Interfaces;
 
 namespace Tanks.Controllers
 {
@@ -15,7 +15,7 @@ namespace Tanks.Controllers
             if (login == null || pass == null) return new JsonResult("Failure"); ;
             if (_profile.ValidateProfile(login, pass)) 
             {
-                return new RedirectToActionResult("Game", "Home", null); ;
+                return new RedirectToActionResult("Game", "Game", null); ;
             }
             return new JsonResult("Failure");
         }

@@ -1,4 +1,4 @@
-﻿namespace Tanks.Game
+﻿namespace Tanks.Game.Interfaces
 {
     public interface IProfile
     {
