@@ -1,21 +1,13 @@
 ﻿@model Tanks.Models.GameFieldModel
 
-<div>
-	GameField
-	<div class="GameField">
-		@{
-			for (int row = 0; row < Model.FieldHeight; ++row)
-			{
-				for (int column = 0; column < Model.FieldWidth; ++column)
-				{
-					Html.Raw(@"<div class=""GameFieldRow"">");
-					await Html.RenderPartialAsync("GameFieldCell", Model.Map[row][column]);
-					Html.Raw(@"</div>");
-				}
-			}
+<div class="GameField">
+	@for (int row = 0; row < Model.FieldHeight; ++row)
+	{
+		<div class="GameFieldRow">
+		@for (int column = 0; column < Model.FieldWidth; ++column)
+		{	
+			await Html.RenderPartialAsync("GameFieldCell", Model.Map[row][column]);
 		}
-		
-
-		
-	</div>
+		</div>
+	}
 </div>

@@ -1,2 +1,52 @@
-﻿body {
+﻿.GameField {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.GameField .GameFieldRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.GameField .GameFieldRow div{
+    --cell-size: 5vmin;
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
+.EmptyCell {
+    background-color:black;
+}
+
+.BrickCell {
+    background-image: url("/assets/textures/map.png");
+    background-size: auto 100%;
+}
+
+.BedrockCell {
+    background-image: url("/assets/textures/map.png");
+    background-size: auto 100%;
+    background-position-x: calc(var(--cell-size) * -1);
+}
+
+.EnemyBaseCell {
+    background-image: url("/assets/textures/map.png");
+    background-size: auto 100%;
+    background-position-x: calc(var(--cell-size) * -5);
+    rotate: 180deg;
+}
+
+.FriendlyBaseCell {
+    background-image: url("/assets/textures/map.png");
+    background-size: auto 100%;
+    background-position-x: calc(var(--cell-size) * -5); 
 }

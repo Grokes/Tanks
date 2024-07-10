@@ -5,8 +5,8 @@ namespace Tanks.Models
 {
 	public class GameFieldModel
 	{
-		public int FieldWidth => 20;
-		public int FieldHeight => 20;
+		public int FieldWidth => 15;
+		public int FieldHeight => 15;
 
 		public CellTile[][] Map { get; private set; }
 		public GameFieldModel(IGameTanks game)
@@ -29,7 +29,7 @@ namespace Tanks.Models
 			{
 				for (int column = 2; column < FieldWidth - 2; column += 2)
 				{
-						Map[row][column] = CellTile.Brick;
+						Map[row][column] = CellTile.Bedrock;
 				}
 			}
 		}
