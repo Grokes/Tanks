@@ -1,0 +1,21 @@
+﻿@using Tanks.Models.Enums
+@model Tanks.Models.Enums.CellTile
+
+@switch (Model)
+{
+	case CellTile.Empty:
+		<div>Empty</div>
+		break;
+	case CellTile.Brick:
+		<div>Brick</div>
+		break;
+	case CellTile.Bedrock:
+		<div>Bedrock</div>
+		break;
+	case CellTile.EnemyBase:
+		<div>EnemyBase</div>
+		break;
+	case CellTile.FriendlyBase:
+		<div>FriendlyBase</div>
+		break;
+}

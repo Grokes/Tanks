@@ -3,10 +3,18 @@
 <div>
 	GameField
 	<div class="GameField">
-		@for (int counter = 0; counter < Model.FieldHeight; ++counter)
-		{
-			await Html.RenderPartialAsync("GameFieldRow");
+		@{
+			for (int row = 0; row < Model.FieldHeight; ++row)
+			{
+				for (int column = 0; column < Model.FieldWidth; ++column)
+				{
+					Html.Raw(@"<div class=""GameFieldRow"">");
+					await Html.RenderPartialAsync("GameFieldCell", Model.Map[row][column]);
+					Html.Raw(@"</div>");
+				}
+			}
 		}
+		
 
 		
 	</div>
