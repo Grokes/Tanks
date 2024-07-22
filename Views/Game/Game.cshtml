@@ -1,16 +1,18 @@
-﻿@{
+﻿@model GameModel
+
+@{
     ViewData["Title"] = "Game";
 }
-
-@model GameModel
 
 @section HeadResources
 {
     <link rel="stylesheet" href="~/css/Game.css"></link>
+    <script src="/js/Game.js" type="module"></script>
 }
 
-<center>
+<div class="text-center GameContainer">
     @{
         await Html.RenderPartialAsync("GameField", Model.GameFieldModel);
+        await Html.RenderPartialAsync("GameFightField", Model.GameFightFieldModel);
     }
-</center>
+</div>

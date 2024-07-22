@@ -50,3 +50,18 @@
     background-size: auto 100%;
     background-position-x: calc(var(--cell-size) * -5); 
 }
+
+.GameFightField{
+    z-index: 1;
+}
+
+.GameContainer{
+    display: grid;
+    grid-template: 1fr/1fr;
+    place-items: center;
+}
+
+.GameContainer > div{
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
