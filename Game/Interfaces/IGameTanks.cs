@@ -2,7 +2,8 @@
 {
 	public interface IGameTanks
 	{
-		void StartGame();
+        GameField GameField { get;}
+        void StartGame();
 		void EndGame();
 	}
 }

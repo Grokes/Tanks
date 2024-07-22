@@ -22,6 +22,8 @@ namespace Tanks.Game
 				_games["null"].EndGame();
 			}
 			_games["null"] = new GameTanks();
-		}
+            _games["null"].StartGame();
+
+        }
 	}
 }
